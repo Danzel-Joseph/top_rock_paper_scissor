@@ -6,7 +6,81 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        body {
+            background: black;
+            height: 150vh;
+            align-self: center;
+            justify-content: center;
+            margin:0px;
+            border: 1px solid white;
+            border-radius: 1% 1% 10% 10%;
 
-    <script src="./script.js"></script>
+        
+        }
+
+        .heading  p{
+            color:black;
+            align-self: center;
+            justify-self: center;
+            font-size:40px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .heading {
+            border:1px solid white;
+            border-radius: 5% 5% 50% 50%;
+            padding:30px;
+            color: black;
+            background: white;
+
+        }
+
+        .container {
+            background: whitesmoke;
+            padding: 80px;
+            justify-self: center;
+            margin-top: 150px;
+            border: 2px solid white;
+            border-radius: 10% 10% 10% 10%
+        }
+
+        button {
+            width: 200px;
+            height: 200px;
+            padding: 10px; 
+            cursor: pointer;
+        
+        }
+
+        button img {
+            width: 100%;
+            height: 100%; 
+            object-fit: contain;
+        }
+
+        .computer-selection {
+            display:none;
+        }
+
+
+
+
+    </style>
+
+    <div class="heading">
+        <p>Select Either rock, scissor, or paper</p>
+    </div>
+
+    <div class="container">
+        <button class="rock"><img  id="rock" src="rock.png" alt="rock"></button>
+        <button class="paper"><img id="paper" src="paper.png" alt="paper"></button>
+        <button class="scissor"><img  id="scissor" src="scissor.png" alt="scissor"></button> 
+    </div>
+
+    <div class="computer-selection"></div>
+
+
+    <script src="./script.js" defer></script>
 </body>
 </html>
