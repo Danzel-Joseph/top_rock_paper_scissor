@@ -17,11 +17,10 @@ function generateRandom(){
 function checkForRock(){
 
     rock.addEventListener("click",(event)=>{
-        let selection = "rock";
-        computerSelection.innerText = "";
-        computerSelection.style.display = "none";
+        let selection = generateRandom();
+        computerSelection.innerHTML = "";
 
-        if(generateRandom() === "rock"){
+        if(selection === "rock"){
             let showComputerSelection = document.createElement("button");
             let rockImage  = document.createElement("img");
             let divComputer = document.createElement("div");
@@ -65,7 +64,7 @@ function checkForRock(){
             
             computerSelection.setAttribute("style","background:white; border: 1px solid white; border-radius: 10% 10% 10% 10% ; justify-self: center;  margin-top:100px; padding:40px; display:flex;");
             
-        } else if(generateRandom() === "paper"){
+        } else if(selection === "paper"){
             let showComputerSelection = document.createElement("button");
             let showPaper = document.createElement("img");
             let divComputer = document.createElement("div"); 
@@ -108,7 +107,7 @@ function checkForRock(){
     
             computerSelection.setAttribute("style","background:white; border: 1px solid white; border-radius: 10% 10% 10% 10% ; justify-self: center;  margin-top:100px; padding:40px; display:flex;");
 
-        } else if(generateRandom() ==="scissor"){
+        } else if(selection ==="scissor"){
             let showComputerSelection = document.createElement("button");
             let showScissor = document.createElement("img");
             let divComputer = document.createElement("div"); 
@@ -167,4 +166,159 @@ function checkForRock(){
 }
 
 
+function checkforPaper(){
+    paper.addEventListener("click",(event) =>{
+        let selection = generateRandom();
+        computerSelection.innerHTML = "";
+
+        if(selection==="rock"){
+            let showComputerSelection = document.createElement("button"); 
+            let showUserSelection = document.createElement("button");
+            let computerInfo = document.createElement("p");
+            let userInfo =       document.createElement("p");
+            let  divComputer = document.createElement("div");;
+            let divUser = document.createElement("div");
+            let divfinal = document.createElement("div");
+
+            let computerImage = document.createElement("img");
+            let userImage = document.createElement("img");
+
+
+            // add image to the page
+            computerImage.src="rock.png";
+            userImage.src = "paper.png";
+
+            // add image to button
+            showComputerSelection.appendChild(computerImage);
+            showUserSelection.appendChild(userImage);
+
+            // selection info 
+            computerInfo.innerHTML = "Computer Selection<br><br>Rock";
+            userInfo.innerHTML =  "User Selection<br><br>Paper";
+            
+            // style  info
+            computerInfo.setAttribute("style","font-size:30px; color:black;");
+            userInfo.setAttribute("style","font-size:30px; color:black;");
+
+            // append to various div's 
+            divComputer.appendChild(computerInfo);
+            divComputer.appendChild(showComputerSelection);
+
+            divUser.appendChild(userInfo);
+            divUser.appendChild(showUserSelection);
+            divUser.style.marginLeft ="100px";
+
+            divfinal.innerText = "YOU WIN";
+ 
+            // append to computer selection
+            computerSelection.appendChild(divComputer);
+            computerSelection.appendChild(divUser);
+            computerSelection.appendChild(divfinal);
+
+            computerSelection.setAttribute("style","background:white; border: 1px solid white; border-radius: 10% 10% 10% 10% ; justify-self: center;  margin-top:100px; padding:40px; display:flex;");
+
+        } else if(selection ==="paper"){
+
+            let showComputerSelection = document.createElement("button"); 
+            let showUserSelection = document.createElement("button");
+            let computerInfo = document.createElement("p");
+            let userInfo =       document.createElement("p");
+            let  divComputer = document.createElement("div");;
+            let divUser = document.createElement("div");
+            let divfinal = document.createElement("div");
+
+            let computerImage = document.createElement("img");
+            let userImage = document.createElement("img");
+
+
+            // add image to the page
+            computerImage.src="paper.png";
+            userImage.src = "paper.png";
+
+            // add image to button
+            showComputerSelection.appendChild(computerImage);
+            showUserSelection.appendChild(userImage);
+
+            // selection info 
+            computerInfo.innerHTML = "Computer Selection<br><br>Paper";
+            userInfo.innerHTML =  "User Selection<br><br>Paper";
+            
+            // style  info
+            computerInfo.setAttribute("style","font-size:30px; color:black;");
+            userInfo.setAttribute("style","font-size:30px; color:black;");
+
+            // append to various div's 
+            divComputer.appendChild(computerInfo);
+            divComputer.appendChild(showComputerSelection);
+
+            divUser.appendChild(userInfo);
+            divUser.appendChild(showUserSelection);
+            divUser.style.marginLeft ="100px";
+
+            divfinal.innerText = "IT's A DRAW";
+ 
+            // append to computer selection
+            computerSelection.appendChild(divComputer);
+            computerSelection.appendChild(divUser);
+            computerSelection.appendChild(divfinal);
+
+            computerSelection.setAttribute("style","background:white; border: 1px solid white; border-radius: 10% 10% 10% 10% ; justify-self: center;  margin-top:100px; padding:40px; display:flex;");
+        } else if(selection === "scissor"){
+            let showComputerSelection = document.createElement("button"); 
+            let showUserSelection = document.createElement("button");
+            let computerInfo = document.createElement("p");
+            let userInfo =       document.createElement("p");
+            let  divComputer = document.createElement("div");;
+            let divUser = document.createElement("div");
+            let divfinal = document.createElement("div");
+
+            let computerImage = document.createElement("img");
+            let userImage = document.createElement("img");
+
+
+            // add image to the page
+            computerImage.src="scissor.png";
+            userImage.src = "paper.png";
+
+            // add image to button
+            showComputerSelection.appendChild(computerImage);
+            showUserSelection.appendChild(userImage);
+
+            // selection info 
+            computerInfo.innerHTML = "Computer Selection<br><br>Scissor";
+            userInfo.innerHTML =  "User Selection<br><br>Paper";
+            
+            // style  info
+            computerInfo.setAttribute("style","font-size:30px; color:black;");
+            userInfo.setAttribute("style","font-size:30px; color:black;");
+
+            // append to various div's 
+            divComputer.appendChild(computerInfo);
+            divComputer.appendChild(showComputerSelection);
+
+            divUser.appendChild(userInfo);
+            divUser.appendChild(showUserSelection);
+            divUser.style.marginLeft ="100px";
+
+            divfinal.innerText = "YOU LOSE";
+ 
+            // append to computer selection
+            computerSelection.appendChild(divComputer);
+            computerSelection.appendChild(divUser);
+            computerSelection.appendChild(divfinal);
+
+            computerSelection.setAttribute("style","background:white; border: 1px solid white; border-radius: 10% 10% 10% 10% ; justify-self: center;  margin-top:100px; padding:40px; display:flex;");
+
+        }
+
+
+
+    });
+}
+
+
+
+
+
 checkForRock();
+checkforPaper();
